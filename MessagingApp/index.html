@@ -11,7 +11,7 @@
         <br>
         <input class="form-control" placeholder="Name">
         <br>
-        <button class="btn btn-success">Send</button>
+        <button id="send" class="btn btn-success">Send</button>
     </div>
 
     <!-- Div to display the message history-->
@@ -24,8 +24,10 @@
 <!-- Adding some jQuery-->
 <script>
     $(() => {
-        addMessages({name:"Cherry", message:"Hi mamayya"})
-    })
+        $("#send").click(() => {
+            addMessages({name:"Cherry", message:"Hi mamayya"})
+        })
+    }) 
 
     function addMessages(message) {
         $("#messages").append(`<h4> ${message.name} </h4><p> ${message.message} </p>`)
