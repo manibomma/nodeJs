@@ -20,3 +20,10 @@ Serving static content :
 $() - Shorthand version of "jQuery document ready" event function 
     The document ready function will be called when document finishes loading. This way we can confirm that all the elements on the page are are ready to be used.
 
+
+GET SERVICE in node, this will allows us to get actual messages from backend to our front end :
+    app.get('/messages', (req, res) => {
+
+    })
+    param 1 : route
+    param 2 : callback, to handle the request. That will take in the request and provides the response.
