@@ -13,3 +13,10 @@ Serving static content :
     1. app.use() is used to host the static content, i.e., the html created will get served through app.use()
     2. In order to tell express that we will be using static content, use below
         app.use(express.static(__dirname))   // __dirname means passing the entire directory
+
+
+#  Referred https://getbootstrap.com/ for front end of this app
+
+$() - Shorthand version of "jQuery document ready" event function 
+    The document ready function will be called when document finishes loading. This way we can confirm that all the elements on the page are are ready to be used.
+
