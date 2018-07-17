@@ -8,3 +8,6 @@ E.g: with Socket.io, push notification is possible i.e., the clients get updated
 Socket.io has 2 components :
 1. Client side library that runs on browser
 2. Server side library that runs for nodeJS
+
+Serving static content :
+app.use() is used to host the static content, i.e., the html created will be served through app.use()
