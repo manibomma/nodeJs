@@ -10,4 +10,6 @@ Socket.io has 2 components :
 2. Server side library that runs for nodeJS
 
 Serving static content :
-app.use() is used to host the static content, i.e., the html created will be served through app.use()
+    1. app.use() is used to host the static content, i.e., the html created will get served through app.use()
+    2. In order to tell express that we will be using static content, use below
+        app.use(express.static(__dirname))   // __dirname means passing the entire directory
