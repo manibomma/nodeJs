@@ -34,5 +34,8 @@ jQuery http get request :
         console.log(data)
     })
     
+Used Postman to validate POST service endpoint.
+
+    
     param 1 : URL
     param 2 : callback that provides us with data
