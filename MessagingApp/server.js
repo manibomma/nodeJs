@@ -5,6 +5,7 @@ var messages = [
     {name:"Cherry", message:"Hi Mamayya"},
     {name:"Ramii", message:"Hello dallng"}
 ]
+
 app.use(express.static(__dirname))
 
 app.get('/messages', (req, res) => {
