@@ -27,3 +27,12 @@ GET SERVICE in node, this will allows us to get actual messages from backend to 
     })
     param 1 : route
     param 2 : callback, to handle the request. That will take in the request and provides the response.
+    
+    
+jQuery http get request :
+    $.get('http://localhost:3000/messages', (data) => {
+        console.log(data)
+    })
+    
+    param 1 : URL
+    param 2 : callback that provides us with data
