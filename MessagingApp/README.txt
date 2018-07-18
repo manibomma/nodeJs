@@ -39,4 +39,4 @@ jQuery http get request :
     
  Used Postman to validate POST service endpoint.
  
- Express has no build-in support to parse the body, 
+ Express has no build-in support to parse the body, i.e., when we post a message(from postman or a client) we cannot parse request's body. When we try to work on the request body it returns an UNDEFINED. So, install body-parser package.
