@@ -1,13 +1,15 @@
 var express = require('express')
 
 var app = express()
+var bodyparser = require('body-parser')
+
 var messages = [
     {name:"Cherry", message:"Hi Mamayya"},
     {name:"Ramii", message:"Hello dallng"}
 ]
 
 app.use(express.static(__dirname))
-
+app.use(bodyparser.json())
 app.get('/messages', (req, res) => {
     res.send(messages)
 })
