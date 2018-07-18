@@ -32,10 +32,11 @@ GET SERVICE in node, this will allows us to get actual messages from backend to 
 jQuery http get request :
     $.get('http://localhost:3000/messages', (data) => {
         console.log(data)
-    })
-    
-Used Postman to validate POST service endpoint.
-
-    
+    })  
     param 1 : URL
     param 2 : callback that provides us with data
+    
+    
+ Used Postman to validate POST service endpoint.
+ 
+ Express has no build-in support to parse the body, 
