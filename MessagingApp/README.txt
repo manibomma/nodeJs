@@ -47,3 +47,11 @@ Used Postman to validate POST service endpoint.
  
 * What comes in from browser is urlencoded, so we must set our body parser to support that.
     app.use(bodyParser.urlencoded({extended:false}))
+
+** Setting up socket.io is a bit different compared other packages. Socket.io needs to tie in with express. So we need to create a regular HTTP server with node that will then share with express and socket.io.
+    var http = require('http').Server(app)
+    var io = require('socket.io')(http)  ---> Passing reference with http
+The above is setting up socket.io at backend.
+
+We need to set up socket.io at front end as well, i.e., add 
+<script scr="/socket.io/socket.io.js"> </script>
