@@ -12,11 +12,6 @@ var Message = mongoose.model('Message', {
     message: String
 })
 
-var messages = [
-    {name:"Cherry", message:"Hi Mamayya"},
-    {name:"Ramii", message:"Hello dallng"}
-]
-
 app.use(express.static(__dirname))
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended:false}))
@@ -30,10 +25,10 @@ app.post('/messages', (req, res) => {
     message.save((err) => {
         if(err)
             sendStatus(500)
+
+        io.emit('messageEvent', req.body)
+        res.sendStatus(200)
     })
-    messages.push(req.body)
-    io.emit('messageEvent', req.body)
-    res.sendStatus(200)
 })
 
 io.on('connection', (socket) => {
