@@ -98,3 +98,10 @@ Promises :
 Async/await :
     1. one of the latest features in node
     2. similar to promises, it makes asynchronous code look more synchronous
+    3. in order to work with await, we need to declare our express function as async
+    
+    e.g: 
+    app.post('/messages', async (req, res) => {
+        var savedMessage = await Message.save()
+        console.log('Saved')
+    })
