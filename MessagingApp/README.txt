@@ -65,6 +65,6 @@ This will also make a connection with socket.io server at the same URL that the 
 
 
 We can emit() an event from server to all clients notifying them about the new message that was posted
-    io.emit('message', req.body)   --> 'message' is the name of the event
+    io.emit('messageEvent', req.body)   --> 'messageEvent' is the name of the event
 We need to listen on the event in the html
-    socket.listen('message', actionToBeDone)
+    socket.on('messageEvent', actionToBeDone)
