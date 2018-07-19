@@ -89,3 +89,7 @@ Points :
     1. we name the variable starting with capital letter stating that it is a model. 
     2. first parameter is what we call the object i.e., Message
     3. the content within {} in model method is call "Schema Definition", which contains the propertyName & propertyType
+
+Promises :
+    1. Promises give us another option of how to work with asynchronous code
+    2. Return an object which promise to do some work. This object has separate callbacks for success and for failures. This lets us work with asynchronous code in a much more synchronous way.
