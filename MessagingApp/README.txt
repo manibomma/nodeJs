@@ -68,3 +68,6 @@ We can emit() an event from server to all clients notifying them about the new m
     io.emit('messageEvent', req.body)   --> 'messageEvent' is the name of the event
 We need to listen on the event in the html
     socket.on('messageEvent', actionToBeDone)
+    
+  
+** Install mongoose to access mongoDB in node
