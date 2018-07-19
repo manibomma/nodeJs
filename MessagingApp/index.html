@@ -27,7 +27,8 @@
 <script>
     $(() => {
         $("#send").click(() => {
-            addMessages({name:"Cherry", message:"Hi mamayya"})
+            var message = {name:$("#name").val(), message:$("#message").val()}
+            postMessage(message)
         })
 
         getMessages()
@@ -43,9 +44,7 @@
         })
     }
 
-    function postMessge(message) {
-        $.post('http://localhost:3000/messages', message, (data) => {
-            data.forEach(addMessages)
-        } )
+    function postMessage(message) {
+        $.post('http://localhost:3000/messages', message)
     }
 </script>
