@@ -7,6 +7,11 @@ var mongoose = require('mongoose')
 
 var dbURL = 'mongodb://maniuser123:maniuser123@ds143971.mlab.com:43971/manidb'
 
+var Message = mongoose.model('Message', {
+    name: String,
+    message: String
+})
+
 var messages = [
     {name:"Cherry", message:"Hi Mamayya"},
     {name:"Ramii", message:"Hello dallng"}
@@ -21,6 +26,11 @@ app.get('/messages', (req, res) => {
 })
 
 app.post('/messages', (req, res) => {
+    var message = new Message(req.body)
+    message.save((err) => {
+        if(err)
+            sendStatus(500)
+    })
     messages.push(req.body)
     io.emit('messageEvent', req.body)
     res.sendStatus(200)
