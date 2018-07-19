@@ -78,3 +78,14 @@ connect to mongoDB :
     mongoose.connect(dbURL, {useNewParserUrl: true}, (err) => {
         console.log('mongo db connection', err)
     })
+    
+In order to start saving data with mongoose, we need a bit of structure i.e., model and a schema for a message(the object we are maintain in this app) object
+    var Message = mongoose.model('Message', {
+        name: String,
+        message: String
+    })
+    
+Points : 
+    1. we name the variable starting with capital letter stating that it is a model. 
+    2. first parameter is what we call the object i.e., Message
+    3. the content within {} in model method is call "Schema Definition", which contains the propertyName & propertyType
