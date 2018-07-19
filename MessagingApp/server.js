@@ -3,6 +3,9 @@ var app = express()
 var http = require('http').Server(app)
 var io = require('socket.io')(http)  // pass in reference to http
 var bodyparser = require('body-parser')
+var mongoose = require('mongoose')
+
+var dbURL = 'mongodb://maniuser123:maniuser123@ds143971.mlab.com:43971/manidb'
 
 var messages = [
     {name:"Cherry", message:"Hi Mamayya"},
@@ -25,6 +28,10 @@ app.post('/messages', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log('a user connected')
+})
+
+mongoose.connect(dbURL, {useNewUrlParser : true},(err) => {
+    console.log('mongo db connection ', err)
 })
 
 var server = http.listen(3000, () => {
