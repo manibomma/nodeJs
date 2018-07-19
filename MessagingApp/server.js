@@ -17,7 +17,9 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended:false}))
 
 app.get('/messages', (req, res) => {
-    res.send(messages)
+    Message.find({}, (err, messages) => {
+        res.send(messages)
+    })
 })
 
 app.post('/messages', (req, res) => {
