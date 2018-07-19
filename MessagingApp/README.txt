@@ -62,3 +62,9 @@ After setting up socket.io, we can no more serve our backend with just express w
     
 var socket = io()  --> Initializing socket.io
 This will also make a connection with socket.io server at the same URL that the current page is being hosted on.
+
+
+We can emit() an event from server to all clients notifying them about the new message that was posted
+    io.emit('message', req.body)   --> 'message' is the name of the event
+We need to listen on the event in the html
+    socket.listen('message', actionToBeDone)
