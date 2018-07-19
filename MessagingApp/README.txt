@@ -58,3 +58,7 @@ We need to set up socket.io at front end as well, i.e., add
 
 After setting up socket.io, we can no more serve our backend with just express we need to use node http server so that both express & socket.io will be running.
     i.e., we need to listen on http instead of app
+    
+    
+var socket = io()  --> Initializing socket.io
+This will also make a connection with socket.io server at the same URL that the current page is being hosted on.
