@@ -55,3 +55,6 @@ The above is setting up socket.io at backend.
 
 We need to set up socket.io at front end as well, i.e., add 
 <script scr="/socket.io/socket.io.js"> </script>
+
+After setting up socket.io, we can no more serve our backend with just express we need to use node http server so that both express & socket.io will be running.
+    i.e., we need to listen on http instead of app
