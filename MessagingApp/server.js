@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 var http = require('http').Server(app)
-var io = require('socket.io')(http)
+var io = require('socket.io')(http)  // pass in reference to http
 var bodyparser = require('body-parser')
 
 var messages = [
@@ -23,6 +23,6 @@ app.post('/messages', (req, res) => {
     res.sendStatus(200)
 })
 
-var server = app.listen(3000, () => {
+var server = http.listen(3000, () => {
     console.log('Listening to port ', server.address().port)
 })
