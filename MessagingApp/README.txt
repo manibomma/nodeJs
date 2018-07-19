@@ -70,4 +70,11 @@ We need to listen on the event in the html
     socket.on('messageEvent', actionToBeDone)
     
   
-** Install mongoose to access mongoDB in node
+** Install mongoose to access mongoDB in node & require it
+    var mongoose = require('mongoose')
+    dbURL = 'mongodb://<dbuser>:<dbpassword>@ds******.mlab.com:*****/<dbname>'
+    
+connect to mongoDB :
+    mongoose.connect(dbURL, {useNewParserUrl: true}, (err) => {
+        console.log('mongo db connection', err)
+    })
