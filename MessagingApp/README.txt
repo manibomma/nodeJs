@@ -36,10 +36,14 @@ jQuery http get request :
     param 1 : URL
     param 2 : callback that provides us with data
     
-    
- Used Postman to validate POST service endpoint.
+Used Postman to validate POST service endpoint.
  
- Express has no build-in support to parse the body, i.e., when we post a message(from postman or a client) we cannot parse request's body. When we try to work on the request body it returns an UNDEFINED. So, install body-parser package, set it to be used by the app.
+
+* Express has no build-in support to parse the body, i.e., when we post a message(from postman or a client) we cannot parse request's body. When we try to work on the request body it returns an UNDEFINED. So, install body-parser package, set it to be used by the app.
  
- var bodyParser = require('body-parser')
- app.use(bodyParser.json())  --> This lets bodyParser know that we are expecting json as our http request
+    var bodyParser = require('body-parser')
+    app.use(bodyParser.json())  --> This lets bodyParser know that we are expecting json as our http request
+ 
+ 
+* What comes in from browser is urlencoded, so we must set our body parser to support that.
+    app.use(bodyParser.urlencoded({extended:false}))
