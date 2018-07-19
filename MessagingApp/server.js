@@ -24,21 +24,23 @@ app.get('/messages', (req, res) => {
 
 app.post('/messages', (req, res) => {
     var message = new Message(req.body)
-    message.save((err) => {
-        if(err)
-            sendStatus(500)
+    message.save()
+    .then(() => {        
+        console.log('saved')
+        return Message.findOne({message: 'badword'})
+    })
+    .then((censored) => {
+        if(censored){
+            console.log('found censored word : ',censored)
+            return Message.remove({_id:censored.id})
+        }
         
-        Message.findOne({message: 'badword'}, (err, censored) => {
-            if(censored){
-                console.log('found censored word : ',censored)
-                Message.remove({_id:censored.id}, (err) => {
-                    console.log('removed censored word')
-                })
-            }
-        })
-
         io.emit('messageEvent', req.body)
         res.sendStatus(200)
+    })
+    .catch((err) => {
+        res.sendStatus(500)
+        return console.error(err)
     })
 })
 
