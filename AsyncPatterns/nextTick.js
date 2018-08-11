@@ -1,5 +1,8 @@
 function wishMe(str, postWishMsg) {
-    postWishMsg(`Hey ${str}, welcome onboard.`)
+    process.nextTick(() => {
+        postWishMsg(`Hey ${str}, welcome onboard.`)
+    })
+    
 }
 
 wishMe("Raman", (wish) => {
