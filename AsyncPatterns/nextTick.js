@@ -1,7 +1,8 @@
-function wishMe(str) {
-    return `Hey ${str}, welcome onboard.`
+function wishMe(str, postWishMsg) {
+    postWishMsg(`Hey ${str}, welcome onboard.`)
 }
 
-var wish = wishMe("Raman")
-console.log(wish)
+wishMe("Raman", (wish) => {
+    console.log(wish)
+})
 console.log('Wish accomplished')
