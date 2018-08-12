@@ -10,7 +10,7 @@
           console.log('wait ended')
       })
 
-    - Error always comes as a first parameter
+    - Error are always passed as a first argument to the callback
       e.g:
       delay(5, (error, msg) ={
           if(error) {
@@ -49,4 +49,9 @@
             .then((num) => {console.log(`Number passed by then is : ${num}`)})
 
     - UnhandledPromiseRejectionWarning - occurs when an error occurs in the promise whereas it is not handled by the caller
+
+    - Promisify is a function used to convert callback to promise
+      Usage :
+      var { promisify } = require('util')  --> requiring util's promisify function
+      var delayPromise = promisify(delay)  --> converting the delay callback to a promise
 
