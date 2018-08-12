@@ -3,6 +3,7 @@ var delay = (seconds, callback) => {
         callback(new Error(`Hey, can't wait more than 4 seconds`))
     } else {
         setTimeout(()=>{
+            // a null has to be passed in place of error, if there is no error
             callback(null, `Hey, Waited for ${seconds} seconds`)
         }, seconds * 1000)
     }
