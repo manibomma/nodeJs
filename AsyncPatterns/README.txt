@@ -37,3 +37,7 @@
             .then((msg) => {console.log(msg)})
             .then(() => 10)
             .then((num) => {console.log(`Number passed by then is : ${num}`)})
+
+    - UnhandledPromiseRejectionWarning - occurs when an error occurs in the promise where it is not handled by the caller
+
+    
