@@ -1,6 +1,14 @@
 * NodeJs is Asynchronous
 
 * Callback Pattern : block of instructions wrapped in a function to be called when an asynchronous call has completed
+    - Call back sample :
+      function delay(seconds, callback) {
+          setTimeOut(callback, seconds * 1000)
+      }
+
+      delay(2, () => {
+          console.log('wait ended')
+      })
 
 * Functions return values by 2 types :
     1. direct style i.e., using 'return' statement
@@ -23,3 +31,9 @@
             .then((msg)=>{console.log(msg)})
 
     The above on execution, waits for 2 seconds and displays the message passed by resolves.
+
+    - We can pass values using 'then' chain :
+        delay(2)
+            .then((msg) => {console.log(msg)})
+            .then(() => 10)
+            .then((num) => {console.log(`Number passed by then is : ${num}`)})

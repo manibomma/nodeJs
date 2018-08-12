@@ -6,3 +6,5 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
 
 delay(2)
     .then((msg)=>{console.log(msg)})
+    .then(() => 10)
+    .then((num) => {console.log(`Value passed using then is : ${num}`)})
