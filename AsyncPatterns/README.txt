@@ -9,3 +9,17 @@
 * process.nextTick() - this tells nodeJs to invole the function that we send to nextTick() on the next loop
 
 * Nested call backs also called "Callback hell / pyramid of doom"
+
+* Promise : Its an object used to represent eventual completion of asynchronous operations
+    - The idea behind a promise is that we can wait for an asynchronous operration to complete and then we can resolve the promise
+      e.g:
+        var delay = (seconds) => new Promise((resolves, rejects) => {
+            setTimeOut(() => {
+                resolves('Wait ended')
+            }, seconds * 1000)
+        })
+
+        delay(2)
+            .then((msg)=>{console.log(msg)})
+
+    The above on execution, waits for 2 seconds and displays the message passed by resolves.
