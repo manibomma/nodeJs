@@ -1,9 +1,11 @@
-function delayedWish(seconds, wishMsg) {
-    setTimeout(wishMsg, seconds * 1000)
+function delayedWish(seconds, str, wishMsg) {
+    setTimeout(() => {
+        wishMsg(`Hey ${str}, Thanks for your co-operation.\nHow are you doing?`)
+    }, seconds * 1000)
 }
 
-delayedWish(3, () => {
-    console.log(`Hey, Thanks for your co-operation.\nHow are you doing ?`)
+delayedWish(3, "Raman", (wish) => {
+    console.log(wish)
 })
 
 console.log('There is a delay in wishing, please be patient')
