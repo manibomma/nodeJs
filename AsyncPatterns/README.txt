@@ -10,6 +10,16 @@
           console.log('wait ended')
       })
 
+    - Error always comes as a first parameter
+      e.g:
+      delay(5, (error, msg) ={
+          if(error) {
+              console.log(error.message)
+          } else {
+              console.log(msg)
+          }
+      })
+
 * Functions return values by 2 types :
     1. direct style i.e., using 'return' statement
     2. CPS - continuation passing style, here there is no need to use a return statement
@@ -38,6 +48,5 @@
             .then(() => 10)
             .then((num) => {console.log(`Number passed by then is : ${num}`)})
 
-    - UnhandledPromiseRejectionWarning - occurs when an error occurs in the promise where it is not handled by the caller
+    - UnhandledPromiseRejectionWarning - occurs when an error occurs in the promise whereas it is not handled by the caller
 
-    

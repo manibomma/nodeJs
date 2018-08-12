@@ -1,11 +1,11 @@
 var delay = (seconds) => new Promise((resolves, rejects) => {
     if(seconds > 4) {
         rejects(new Error(`Waiting ${seconds} seconds is too long`))
+    } else {
+        setTimeout(()=> {
+            resolves('Hey, your wait has come to an end')
+        }, seconds * 1000)
     }
-
-    setTimeout(()=> {
-        resolves('Hey, your wait has come to an end')
-    }, seconds * 1000)
 })
 
 delay(10)
