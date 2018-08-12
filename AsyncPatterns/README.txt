@@ -20,6 +20,9 @@
           }
       })
 
+* To generate a beep :
+    process.stdout.write('\x07')
+
 * Functions return values by 2 types :
     1. direct style i.e., using 'return' statement
     2. CPS - continuation passing style, here there is no need to use a return statement

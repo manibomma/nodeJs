@@ -12,6 +12,6 @@ var delay = (seconds, callback) => {
 
 var delayPromise = promisify(delay)
 
-delayPromise(2)
+delayPromise(25)
     .then((msg)=>{console.log(msg)})
     .catch((error)=>{console.log(error.message)})
