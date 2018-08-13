@@ -11,7 +11,7 @@ var delay = (seconds) => new Promise((resolves, rejects) => {
     setTimeout(resolves, seconds * 1000)
 })
 
-var createAndUnlinkFile = Promise.resolve()
+var createAndUnlinkFile = () => Promise.resolve()
                             .then(() => console.log('Starting Operation..'))
                             .then(() => console.log('waiting..'))
                             .then(() => delay(2))
@@ -23,3 +23,5 @@ var createAndUnlinkFile = Promise.resolve()
                             .then(beep)
                             .then(() => console.log('File unlinked successfully'))
                             .catch((error) => console.log(`Error : ${error.message}`))
+
+createAndUnlinkFile()
