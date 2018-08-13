@@ -58,3 +58,21 @@
       var { promisify } = require('util')  --> requiring util's promisify function
       var delayPromise = promisify(delay)  --> converting the delay callback to a promise
 
+* Async-Await :
+    Inside of an ASYNC function we can AWAIT for a PROMISE to complete
+    e.g:
+    var delay = (seconds) => new Promise((resolves, rejects) => {
+        setTimeOut(resolves, seconds * 1000)
+    })
+
+    var someAsyncFunction = async () => {
+        console.log('Beginning async function')
+        console.log('waiting for delay to finish')
+        await delay(5)
+        console.log('End of async function')
+    }
+
+    Notes :
+        1. use 'async' keyword before a function to make it asynchronous.
+        2. use 'await' infront of a promise. Here 'delay' is a promise.
+
