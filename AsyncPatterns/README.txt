@@ -76,3 +76,12 @@
         1. use 'async' keyword before a function to make it asynchronous.
         2. use 'await' infront of a promise. Here 'delay' is a promise.
 
+* Parallel Execution :
+    Promises have some functions that allow us to resolve them at the same time.
+        - promises.all()  : (Takes an array of promises)
+            All the promises inside this will execute parallelly, the following instructions will be exeucted only after reolving all statements within all() 
+
+        - promises.race() : (Takes an array of promises)
+            All the promises inside this will execute parallelly, the following instructions will start executing on completion of atleast onestatement within race()
+    
+
